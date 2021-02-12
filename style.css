@@ -25,6 +25,10 @@ body {
   animation: fall 3s linear forwards;
   color: rebeccapurple;
   z-index: 9999;
+  text-shadow: -2px 2px 0 #fff,
+               2px 2px 0 #fff,
+               2px -2px 0 #fff,
+               -2px -2px 0 #fff;
 }
 
 .heart-card-container {
@@ -33,6 +37,10 @@ body {
   width: 100vh;
   max-width: 90vw;
   max-height: 90vw;
+  text-shadow: -5px 5px 0 #fff,
+               5px 5px 0 #fff,
+               5px -5px 0 #fff,
+               -5px -5px 0 #fff;
 }
 
 .text-container {
@@ -46,6 +54,7 @@ body {
   flex-direction: column;
   padding-bottom: 6vw;
   color: white;
+  text-shadow: none;
 }
 
 h1 {
