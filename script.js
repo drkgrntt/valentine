@@ -4,7 +4,7 @@
 
 function createHeart() {
   const heart = document.createElement("i")
-  heart.classList = ["fas", "fa-heart", "heart-rain"]
+  heart.className = "fas fa-heart heart-rain"
 
   heart.style.left = Math.random() * 100 + "vw"
   heart.style.animationDuration = Math.random() * 2 + 3 + "s"
