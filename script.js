@@ -1,15 +1,46 @@
+// ========================== //
+//     Purple Heart Rain      //
+// ========================== //
+
 function createHeart() {
-  const heart = document.createElement("i");
-  heart.classList = ["fas fa-heart heart-rain"];
+  const heart = document.createElement("i")
+  heart.classList = ["fas", "fa-heart", "heart-rain"]
 
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+  heart.style.left = Math.random() * 100 + "vw"
+  heart.style.animationDuration = Math.random() * 2 + 3 + "s"
 
-  document.body.appendChild(heart);
+  document.body.appendChild(heart)
 
   setTimeout(() => {
-    heart.remove();
-  }, 5000);
+    heart.remove()
+  }, 5000)
 }
 
-setInterval(createHeart, 300);
+setInterval(createHeart, 300)
+
+// ========================== //
+//       Customization        //
+// ========================== //
+
+let to = "Ceanne"
+let message = "I love you,"
+let from = "Derek"
+
+try {
+  let [_, params] = window.location.search.split('?')
+  if (params) {
+    params = params.split('&')
+    params = params.reduce((newParams, param) => {
+      const [key, value] = param.split('=')
+      return { ...newParams, [key]: value }
+    }, {})
+
+    if (params.to) to = decodeURI(params.to)
+    if (params.message) message = decodeURI(params.message)
+    if (params.from) from = decodeURI(params.from)
+  }
+} catch {}
+
+document.getElementById('to').innerText = to
+document.getElementById('message').innerText = message
+document.getElementById('from').innerText = from
