@@ -35,9 +35,9 @@ try {
       return { ...newParams, [key]: value }
     }, {})
 
-    if (params.to) to = decodeURI(params.to)
-    if (params.message) message = decodeURI(params.message)
-    if (params.from) from = decodeURI(params.from)
+    if (params.to) to = decodeURI(params.to).replaceAll('+', ' ')
+    if (params.message) message = decodeURI(params.message).replaceAll('+', ' ')
+    if (params.from) from = decodeURI(params.from).replaceAll('+', ' ')
   }
 } catch {}
 
